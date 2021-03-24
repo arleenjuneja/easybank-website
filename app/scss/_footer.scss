@@ -68,11 +68,11 @@
     }
     &-cta {
         @include breakpoint-up(large) {
-            display: inline-block;
             grid-area: cta;
             justify-self: end;
             align-self: end;
         }
+        display: inline-block;
         margin-bottom: 1.875rem;
     }
     &-copyright {
