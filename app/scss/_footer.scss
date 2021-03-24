@@ -68,6 +68,7 @@
     }
     &-cta {
         @include breakpoint-up(large) {
+            display: inline-block;
             grid-area: cta;
             justify-self: end;
             align-self: end;
