@@ -1,0 +1,86 @@
+.hero {
+    @include breakpoint-up(large) {
+        display: flex;
+        min-height: 41rem;
+        align-items: center;
+    }
+    &-img {
+        background-image: url("../../images/bg-intro-mobile.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+        position: relative;
+        @include breakpoint-up(medium){
+            min-height: 25rem;
+            background-position: center 70%;
+        }
+        @include breakpoint-up(large) {
+            flex: 3;
+            order: 2;
+            height: 41rem;
+            background-image: none;
+            //background-image: url("../../images/bg-intro-desktop.svg");
+            //background-position: left center;
+            //top: 10%;
+
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            background-image: url('../../images/image-mockups.png');
+            height: 100%;
+            background-size: 90%;
+            background-repeat: no-repeat;
+            order: 2;  
+            background-position: center bottom;
+            width: 100%;
+            @include breakpoint-up(medium) {
+                background-size: 52%;
+            }
+            @include breakpoint-up(large) {
+                width: 120%;
+                height: 111%;
+                background-size: 96%;
+                background-position: center bottom;
+                left: 19%;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            background-image: url('../../images/bg-intro-desktop.svg');
+            height: 85%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            order: 2;  
+            background-position: center bottom;
+            width: 100%;
+            @include breakpoint-up(large) {
+                width: 187%;
+                background-size: 78%;
+                left: -22%;
+            }
+            // @include breakpoint-up(medium) {
+            //     background-size: 42%;
+            // }
+        }
+    }
+    .button {
+        display: inline-block;
+    }
+    &-text {
+        display: inline-block;
+        @include breakpoint-up(large) {
+            flex: 2;
+            order: 1;
+            text-align: left;
+            font-size: $font-md;
+        }
+        text-align: center;
+        p {
+            margin-top: 0px;
+            margin-bottom: 1.875rem;
+        }
+    }
+}

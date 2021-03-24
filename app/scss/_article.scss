@@ -1,0 +1,52 @@
+.article {
+    background-color: $very-light-gray;
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.25rem;
+        //grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+        @include breakpoint-up(medium) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint-up(large) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    &-item {
+        background-color: $white;
+        border-radius: 0.3125rem;
+        overflow: hidden;
+        box-shadow: 0 0.1875rem 0.75rem rgba(0, 0, 0,0.15);
+        transition: all 150ms ease-in-out;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+    &-image {
+        height: 12.5rem;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    &-text {
+        padding: 1.875rem;
+        color: $grayish-blue;
+    }
+    &-author {
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+    }
+    &-title {
+        font-size: 1.0625rem;
+        color: $dark-blue;
+        margin-bottom: 1rem;
+        transition: color 150ms ease-in-out;
+        &:hover {
+            color: $lime-green;
+        }
+    }
+    &-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
